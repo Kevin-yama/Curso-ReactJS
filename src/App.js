@@ -12,18 +12,34 @@ const defaultTodo = [
   { text: 'Realizar Curso', completed: false },
   { text: 'leer ', completed: true },
   { text: 'lavar plato', completed: false },
-
 ];
 
+//localStorage.setItem('Retro_do_v1', JSON.stringify(defaultTodo));
+
+// localStorage.removeItem('Retro_do_v1');
 
 function App() {
+  let localStorageTodo = localStorage.getItem('Retro_do_v1');
+ 
+  let parseTodos;
+
+  if (!localStorageTodo) {
+    localStorage.setItem('Retro_do_v1',JSON.stringify([]));
+    parseTodos = [];
+  }else{
+    parseTodos = JSON.parse(localStorageTodo)
+
+  }
+
+  //let parseTodos = JSON.parse(localStorageTodo);
+
   // Creacion de estado { 
   // Estado por defecto
   const [ buscadorValue , setBuscadorValue] = React.useState('');
   console.log("Encontrado: " + buscadorValue);
 
   // Estado derivado 
-  const [todos, setTodos] = React.useState(defaultTodo);
+  const [todos, setTodos] = React.useState(parseTodos);
 
   // estado item 
   const [todoComple , setTodoComple] = React.useState();
@@ -49,11 +65,16 @@ function App() {
     }
   )
   
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('Retro_do_v1', JSON.stringify(newTodos))
+    setTodos(newTodos);
+  };
+
   const compleTodo = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
   
   const deleteTodo = (text) => {
@@ -64,7 +85,7 @@ function App() {
       );
 
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
   
 
