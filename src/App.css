@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+/* Fuente pixelada para el estilo retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.ventana {
+    background: #c0c0c0;
+    width: 500px;
+    border: 3px solid #808080;
+    box-shadow: 5px 5px 0px #404040;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive; /* Fuente pixelada */
+    font-size: 12px;
+    color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Barra superior */
+.barra-superior {
+    background: #000080;
+    color: white;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantiene título a la izquierda y botones a la derecha */
+    font-size: 14px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Contenedor de los botones (alinea bien los botones a la derecha) */
+.botones {
+    display: flex;
+    gap: 5px; /* Espacio entre botones */
+}
+/* Botones estilo retro */
+.boton {
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    padding: 2px 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-.App-header {
-  background-color: #233553;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.boton:hover {
+    background: #a0a0a0;
 }
 
-.App-link {
-  color: #97ca3f;
+/* Estilo de los botones */
+.cerrar {
+    color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.minimizar {
+    color: black;
+}
+
+/* Contenido */
+.contenido {
+    padding: 20px;
+    background: white;
+    border: 2px inset #808080;
 }

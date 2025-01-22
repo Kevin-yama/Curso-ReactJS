@@ -1,0 +1,20 @@
+/* Contenedor del input */
+.contenedor {
+    background: white;
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Estilo del input */
+  input {
+
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive; /* Fuente pixelada */
+  }
