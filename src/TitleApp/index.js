@@ -9,6 +9,16 @@ function TitleApp() {
   } = React.useContext(TodoContext);
     return (
       <React.Fragment>
+        
+        <div className="barra-superior">
+        <span className="titulo">App To do </span>     
+        <div className="botones">
+          <span className="boton minimizar" >🗕</span>
+          <span className="boton cerrar" >❌</span>
+        </div>                                          
+      </div>
+ 
+ 
         <h1 > 
           Tareas Completadas {completedTodos} de {totalTodos}
         </h1>
@@ -22,6 +32,8 @@ function TitleApp() {
         }}>
           [============= 5% completed ]
         </h4>
+
+        
       </React.Fragment>
       
     );

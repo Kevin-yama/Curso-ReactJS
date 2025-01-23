@@ -10,6 +10,8 @@ function TodoProvider({children}) {
         loading,
         error,
       } = useLocalStorage('Retro_do_v1', []);
+
+    const [ openModal , setopenModal ] = React.useState(false)
       
     //let parseTodos = JSON.parse(localStorageTodo);
     //const [todos, saveTodos] = useLocalStorage('Retro_do_v1', []);
@@ -63,6 +65,15 @@ function TodoProvider({children}) {
         saveTodos(newTodos);
     }
 
+    const addTodo = (text) =>{       
+        const newTodos = [...todos];
+        newTodos.push({
+            text,
+            completed: false
+        })
+        saveTodos(newTodos);        
+        
+    }
     return (
         <TodoContext.Provider value={{
             loading,
@@ -74,7 +85,10 @@ function TodoProvider({children}) {
             todosList,
             compleTodo,
             deleteTodo,
-          }}>
+            openModal,
+            setopenModal,
+            addTodo
+        }}>
             {children}
         </TodoContext.Provider>
     );

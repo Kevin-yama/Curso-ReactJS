@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 h1 {
     font-size: 24px;
     text-align: center;
@@ -5,4 +6,67 @@ h1 {
     padding: 48px;
 }
 
-          
+/* Fuente pixelada para el estilo retro */
+
+
+.ventana {
+    background: #c0c0c0;
+    width: 500px;
+    border: 3px solid #808080;
+    box-shadow: 5px 5px 0px #404040;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive; /* Fuente pixelada */
+    font-size: 12px;
+    color: black;
+}
+
+/* Barra superior */
+.barra-superior {
+    background: #edeeee;
+    color: white;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantiene título a la izquierda y botones a la derecha */
+    font-size: 14px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Contenedor de los botones (alinea bien los botones a la derecha) */
+.botones {
+    display: flex;
+    gap: 5px; /* Espacio entre botones */
+}
+/* Botones estilo retro */
+.boton {
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    padding: 2px 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.boton:hover {
+    background: #a0a0a0;
+}
+
+/* Estilo de los botones */
+.cerrar {
+    color: red;
+}
+
+.minimizar {
+    color: black;
+}
+
+/* Contenido */
+.container {
+    padding: 20px;
+    background: white;
+    border: 2px inset #808080;
+}          

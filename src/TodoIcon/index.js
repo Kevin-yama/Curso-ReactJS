@@ -2,8 +2,11 @@ import { ReactComponent  as CheckSVG} from "./check.svg";
 import './TodoIcon.css'
 
 const   iconTypes ={
-    "check": (color) => <CheckSVG 
-        className="Icon-svg" fill={color}/>  
+    "check": (color) => 
+        <CheckSVG 
+            className="Icon-svg" 
+            fill={color}
+        />  
     
 }
 
