@@ -1,6 +1,6 @@
 import './TodoItem.css'
 import { SiRetroarch } from "react-icons/si";
-import { CompleteIcon }  from "./CompleteIcon"
+import { CompleteIcon }  from "../TodoIcon/CompleteIcon"
 
 function TodoItem (props){
     return(

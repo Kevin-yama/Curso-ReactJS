@@ -1,11 +1,16 @@
 import React from "react"
 import './TitleApp.css'
+import { TodoContext } from "../TodoContext";
 
-function TitleApp({ total , completed }) {
+function TitleApp() {
+  const {
+    completedTodos,
+    totalTodos,
+  } = React.useContext(TodoContext);
     return (
       <React.Fragment>
         <h1 > 
-          Tareas Completadas {completed} de {total}
+          Tareas Completadas {completedTodos} de {totalTodos}
         </h1>
 
         <h4 style={{

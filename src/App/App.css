@@ -17,7 +17,7 @@
 
 /* Barra superior */
 .barra-superior {
-    background: #000080;
+    background: #006280;
     color: white;
     padding: 5px;
     display: flex;
@@ -57,7 +57,7 @@
 }
 
 /* Contenido */
-.contenido {
+.container {
     padding: 20px;
     background: white;
     border: 2px inset #808080;
