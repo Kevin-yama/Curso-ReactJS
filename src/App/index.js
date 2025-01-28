@@ -5,12 +5,12 @@ import React from 'react';
 import "./App.css"
 import { TodoProvider } from '../TodoContext';
 
-function App() { 
+function App() {
   return (
     <TodoProvider>
       < AppUI />
     </TodoProvider>
-    
+
   );
 }
 

@@ -16,58 +16,58 @@ import { TodoForm } from '../TodoForm';
 function AppUI() {
   const {
     loading,
-    error,         
+    error,
     todosList,
     compleTodo,
     deleteTodo,
     openModal,
     setopenModal,
-   } = React.useContext(TodoContext);
+  } = React.useContext(TodoContext);
   return (
     <>
 
-<div className="ventana">
-      
-    <TitleApp />
-      
-        
-        <SearchApp/>                    
+      <div className="ventana">
+
+        <TitleApp />
+
+
+        <SearchApp />
         <ListApp>
-            {loading && (
-                <>
-                  <TodosLoading />                             
-                </>
-              )
-            }
-            {error && <TodosError/>} 
-            {(!loading && todosList.length === 0) && <EmptyTodos />} 
-            {todosList.map(todo => (                  
-              <TodoItem 
-                key={todo.text} 
-                text = {todo.text}
-                completed = {todo.completed}
-                onCompleted={() => compleTodo(todo.text)}
-                onDelete ={ ()=> deleteTodo(todo.text)}
-              />
-              ))
-            }             
-        </ListApp>                                  
-        <AddTodoButton 
-        setOpenModal ={setopenModal}
+          {loading && (
+            <>
+              <TodosLoading />
+            </>
+          )
+          }
+          {error && <TodosError />}
+          {(!loading && todosList.length === 0) && <EmptyTodos />}
+          {todosList.map(todo => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              completed={todo.completed}
+              onCompleted={() => compleTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
+            />
+          ))
+          }
+        </ListApp>
+        <AddTodoButton
+          setOpenModal={setopenModal}
         />
 
         {openModal &&
           <Modal>
-            <TodoForm />                        
+            <TodoForm />
           </Modal>
         }
       </div>
-    
 
 
 
 
-    
+
+
     </>
   );
 }

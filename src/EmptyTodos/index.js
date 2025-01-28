@@ -1,6 +1,6 @@
 function EmptyTodos() {
     return (
-        <p> vacios </p>
+        <p> Crea un nuevo To Do !!! </p>
     );
     
 }
